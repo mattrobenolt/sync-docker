@@ -4,7 +4,7 @@
 
 FROM debian:jessie
 MAINTAINER Bertrand Chazot <bertrand@bittorrent.com>
-LABEL com.getsync.version="2.3.1"
+LABEL com.getsync.version="2.3.2"
 
 RUN groupadd -r btsync && useradd -r -g btsync btsync
 
@@ -21,9 +21,9 @@ RUN curl -o /usr/local/bin/gosu -fSL "https://github.com/tianon/gosu/releases/do
 	&& rm /usr/local/bin/gosu.asc \
 	&& chmod +x /usr/local/bin/gosu
 
-ENV SYNC_VERSION 2.3.1
-ENV SYNC_DOWNLOAD_URL https://download-cdn.getsync.com/2.3.1/linux-x64/BitTorrent-Sync_x64.tar.gz
-ENV SYNC_DOWNLOAD_SHA256 2098169b993e30d0848acc29822d6c6bda045eedb9de2192d3f94b69bcf3bf9d
+ENV SYNC_VERSION 2.3.2
+ENV SYNC_DOWNLOAD_URL https://download-cdn.getsync.com/2.3.2/linux-x64/BitTorrent-Sync_x64.tar.gz
+ENV SYNC_DOWNLOAD_SHA256 770cf326e42b1e7f478600f4a5868ba883f15c1dcdd1c308e7ddc2d99403d21d
 
 RUN curl -sSL "$SYNC_DOWNLOAD_URL" -o sync.tar.gz \
     && echo "$SYNC_DOWNLOAD_SHA256 sync.tar.gz" | sha256sum -c - \
