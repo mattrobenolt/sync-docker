@@ -1,10 +1,4 @@
-# BitTorrent Sync
-#
-# VERSION               0.1
-
 FROM debian:jessie
-MAINTAINER Bertrand Chazot <bertrand@bittorrent.com>
-LABEL com.getsync.version="2.3.7"
 
 RUN groupadd -r btsync && useradd -r -g btsync btsync
 
@@ -22,9 +16,9 @@ RUN set -x \
     && gosu nobody true \
     && apt-get purge -y --auto-remove ca-certificates wget && chmod +x /usr/local/bin/gosu
 
-ENV SYNC_VERSION 2.3.7
-ENV SYNC_DOWNLOAD_URL https://download-cdn.getsync.com/2.3.7/linux-x64/BitTorrent-Sync_x64.tar.gz
-ENV SYNC_DOWNLOAD_SHA256 a15d13f7daf14c9c38b78fd7659e982379c0b8a731d437c661367760f632dcc2
+ENV SYNC_VERSION 2.3.8
+ENV SYNC_DOWNLOAD_URL https://download-cdn.getsync.com/2.3.8/linux-x64/BitTorrent-Sync_x64.tar.gz
+ENV SYNC_DOWNLOAD_SHA256 9e1a63d7e346278f7301f149626013242a3c605db90a645ebe757c164cd1c50a
 
 RUN set -x \
     && apt-get update && apt-get install -y --no-install-recommends ca-certificates wget && rm -rf /var/lib/apt/lists/* \
